@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import <Parse/Parse.h>
+
+#import "Common.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +20,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    // ****************************************************************************
+    // Fill in with your Parse and Twitter credentials. Don't forget to add your
+    // Facebook id in Info.plist:
+    // ****************************************************************************
+    [Parse enableLocalDatastore];
+    [Parse setApplicationId:@"youkey" clientKey:@"youkey"];
+    //[PFFacebookUtils initializeFacebook];
+    [PFPurchase addObserverForProduct:upgrade_key block:^(SKPaymentTransaction *transaction) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:@"yes" forKey:@"pro"];
+        [defaults synchronize];
+    }];
     return YES;
 }
 
@@ -36,6 +53,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    //[FBSession.activeSession handleDidBecomeActive];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -124,4 +142,15 @@
     }
 }
 
+// Facebook oauth callback
+/*
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return [PFFacebookUtils handleOpenURL:url];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [PFFacebookUtils handleOpenURL:url];
+}
+ */
 @end
