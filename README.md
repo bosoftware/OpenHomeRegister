@@ -40,16 +40,7 @@ You have to get a Parse key to run this app.
 
 
 ##Thank you for your support.
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_donations">
-<input type="hidden" name="business" value="amos.software@hotmail.com">
-<input type="hidden" name="lc" value="AU">
-<input type="hidden" name="item_name" value="Bo Software">
-<input type="hidden" name="no_note" value="0">
-<input type="hidden" name="currency_code" value="AUD">
-<input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
-<input type="image" src="https://www.paypalobjects.com/en_AU/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_AU/i/scr/pixel.gif" width="1" height="1">
-</form>
+
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=amos%2esoftware%40hotmail%2ecom&lc=AU&item_name=Bo%20Software&currency_code=AUD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted">Please click here to donate if you think this project is useful for you. Thanks.</a>
 
 
