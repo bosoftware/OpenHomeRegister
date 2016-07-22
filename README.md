@@ -31,11 +31,11 @@ You have to get a Parse key to run this app.
 
 ## Screenshots
 
-<img src="https://cloud.githubusercontent.com/assets/20594610/17055698/d3a9a85a-5051-11e6-8ce1-a0ca85ab99b2.png" width="150" height="250" />
+<img src="https://cloud.githubusercontent.com/assets/20594610/17055698/d3a9a85a-5051-11e6-8ce1-a0ca85ab99b2.png" width="300" height="400" />
 
-<img src="https://cloud.githubusercontent.com/assets/20594610/17055706/dd1d9b08-5051-11e6-9a2d-ea2909246fdc.jpg" width="150" height="250" />
+<img src="https://cloud.githubusercontent.com/assets/20594610/17055706/dd1d9b08-5051-11e6-9a2d-ea2909246fdc.jpg" width="300" height="400" />
 
 
-<img src="https://cloud.githubusercontent.com/assets/20594610/17055707/dd2322b2-5051-11e6-817c-3658401af718.jpg" width="150" height="250" />
+<img src="https://cloud.githubusercontent.com/assets/20594610/17055707/dd2322b2-5051-11e6-817c-3658401af718.jpg" width="300" height="400" />
 
 
