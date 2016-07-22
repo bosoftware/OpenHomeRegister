@@ -10,3 +10,7 @@ It is using Pod, so before you build, you need to run pod install and open OpenH
 You also need Parse key to run this app.
 
 ![alt tag](https://cloud.githubusercontent.com/assets/20594610/17055698/d3a9a85a-5051-11e6-8ce1-a0ca85ab99b2.png)
+
+![alt tag](https://cloud.githubusercontent.com/assets/20594610/17055706/dd1d9b08-5051-11e6-9a2d-ea2909246fdc.jpg)
+
+![alt tag](https://cloud.githubusercontent.com/assets/20594610/17055707/dd2322b2-5051-11e6-817c-3658401af718.jpg)
