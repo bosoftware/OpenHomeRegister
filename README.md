@@ -26,7 +26,7 @@ You have to get a Parse key to run this app.
 
 ## Authors
 
-* **Bo Wang** - *Initial work* - [PurpleBooth](https://thebosoftware.com)
+* **Bo Wang** - *Initial work* - [Bo Wang's Software](https://thebosoftware.com)
 
 
 ## Screenshots
