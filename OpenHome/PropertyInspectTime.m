@@ -10,4 +10,12 @@
 
 @implementation PropertyInspectTime
 
+@dynamic currentUser,inspectTime,propertyObject;
++ (void)load {
+    [self registerSubclass];
+}
+
++ (NSString *)parseClassName {
+    return @"PropertyInspectTime";
+}
 @end

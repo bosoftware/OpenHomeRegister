@@ -9,5 +9,13 @@
 #import "QuestionValueObject.h"
 
 @implementation QuestionValueObject
++ (void)load {
+    [self registerSubclass];
+}
+
++ (NSString *)parseClassName {
+    return @"QuestionValueObject";
+}
+
 
 @end

@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
+#import "QuestionObject.h"
 
-@interface QuestionValueObject : NSObject
+
+@interface QuestionValueObject : PFObject<PFSubclassing>
++ (NSString *)parseClassName;
+
+@property(nonatomic,retain) QuestionObject * question;
+@property(nonatomic,retain) NSString *answer;
 
 @end

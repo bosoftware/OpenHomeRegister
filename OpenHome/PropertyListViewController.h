@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PropertyListViewController : UIViewController
+@interface PropertyListViewController : UIViewController<UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
+
+@property (weak, nonatomic) IBOutlet UITableView *propertyTableView;
+
+@property(nonatomic,retain) NSMutableArray * propertyArray;
+@property(nonatomic,retain) NSMutableArray * filteredPropertyArray;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 
 @end

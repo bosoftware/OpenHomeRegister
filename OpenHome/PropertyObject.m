@@ -7,7 +7,18 @@
 //
 
 #import "PropertyObject.h"
-
+#import <Parse/PFObject+Subclass.h>
 @implementation PropertyObject
+
+@dynamic address,suburb,state,memo,numberOfVisit,image,currentUser;
+
++ (void)load {
+    [self registerSubclass];
+}
+
++ (NSString *)parseClassName {
+    return @"PropertyObject";
+}
+
 
 @end

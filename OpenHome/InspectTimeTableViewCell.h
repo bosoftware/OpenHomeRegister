@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface InspectTimeTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *inspectTimeLabel;
 
 @end

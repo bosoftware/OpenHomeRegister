@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QuestionObject.h"
 
 @interface TextQuestionTableViewCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UILabel *question;
+@property(nonatomic,weak) IBOutlet UITextField *answer;
 
+@property(nonatomic,retain) QuestionObject *questionObject;
 @end

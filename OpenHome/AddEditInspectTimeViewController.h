@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PropertyInspectTime.h"
 
 @interface AddEditInspectTimeViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIDatePicker *myDatePicker;
 
+@property(nonatomic,retain) PropertyInspectTime * inspectTime;
+@property(nonatomic,retain) PropertyObject * propertyObject;
 @end

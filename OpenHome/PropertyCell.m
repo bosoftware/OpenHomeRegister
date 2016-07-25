@@ -6,31 +6,42 @@
 //  Copyright (c) 2014 Daston~Rhadnojnainva. All rights reserved.
 //
 
-#import "AppCell.h"
-#import "App.h"
+#import "PropertyCell.h"
+#import "PropertyObject.h"
 #import "UIImageView+Networking.h"
 
-@interface AppCell ()
+@interface PropertyCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *iconView;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
-@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
-@property (weak, nonatomic) IBOutlet UILabel *artistLabel;
+@property (weak, nonatomic) IBOutlet UILabel *address;
+@property (weak, nonatomic) IBOutlet UILabel *memo;
+@property (weak, nonatomic) IBOutlet UILabel *visitNumber;
 
-@property (nonatomic) App *appRecord;
+
+@property (nonatomic) PropertyObject *property;
 @end
 
-@implementation AppCell
+@implementation PropertyCell
 
-- (void)configureCellForAppRecord:(App *)app
+- (void)configureCellForAppRecord:(PropertyObject *)property
 {
-    self.appRecord = app;
-    [self.iconView setImage:[UIImage imageNamed:@"appLogo.png"]];
-    [self.iconView setImageURL:[NSURL URLWithString:app.iconURLString]];
-    self.titleLabel.text = app.name;
-    self.categoryLabel.text = self.appRecord.category;
-    self.priceLabel.text = self.appRecord.price;
-    self.artistLabel.text = self.appRecord.artist;
+    self.property = property;
+    
+    [self.iconView setImage:[UIImage imageNamed:@"logo"]];
+    
+    self.address.text = [NSString stringWithFormat:@"%@ %@ %@",property.address,property.suburb,property.state];
+    self.memo.text = property.memo;
+    self.visitNumber.text = property.numberOfVisit;
+    
+    
+    PFFile *userImageFile = property.image;
+    if (userImageFile!=nil){
+    [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:imageData];
+            [self.iconView setImage:image];
+        }
+    }];
+    }
 }
 
 @end

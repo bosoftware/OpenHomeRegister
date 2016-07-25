@@ -8,6 +8,7 @@
 
 #import "MySignUpViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import <ParseUI/PFTextField.h>
 
 @interface MySignUpViewController ()
 @property (nonatomic, strong) UIImageView *fieldsBackground;
@@ -53,7 +54,7 @@
     [self.signUpView.additionalField setTextColor:[UIColor colorWithRed:135.0f/255.0f green:118.0f/255.0f blue:92.0f/255.0f alpha:1.0]];
     
     // Change "Additional" to match our use
-    [self.signUpView.additionalField setPlaceholder:@"Phone number"];
+    [self.signUpView.additionalField setPlaceholder:@"Company Name"];
     
 }
 

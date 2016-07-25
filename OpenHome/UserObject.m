@@ -10,4 +10,15 @@
 
 @implementation UserObject
 
+@dynamic propertyInspectTime,propertyObject,dictionary;
+
++ (void)load {
+    [self registerSubclass];
+}
+
++ (NSString *)parseClassName {
+    return @"Visitors";
+}
+
+
 @end

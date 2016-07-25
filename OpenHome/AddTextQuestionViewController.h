@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "QuestionObject.h"
 @interface AddTextQuestionViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *questionTextField;
+@property (nonatomic,retain) QuestionObject * question;
+@property (weak, nonatomic) IBOutlet UISwitch *mandatorySwitch;
 
 @end

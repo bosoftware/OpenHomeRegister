@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PropertyObject.h"
 
 @interface InspectTimeTableViewController : UITableViewController
+@property (nonatomic,retain) PropertyObject * propertyObject;
+@property(nonatomic,retain)NSMutableArray * inspectTimeArray;
 
 @end

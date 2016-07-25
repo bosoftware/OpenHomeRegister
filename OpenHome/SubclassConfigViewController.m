@@ -9,6 +9,15 @@
 #import "SubclassConfigViewController.h"
 #import "MyLogInViewController.h"
 #import "MySignUpViewController.h"
+#import <MBProgressHUD/MBProgressHUD.h>
+#import "QuestionObject.h"
+#import "Common.h"
+#import <SWRevealViewController/SWRevealViewController.h>
+
+@interface SubclassConfigViewController(){
+    MBProgressHUD *HUD;
+}
+@end
 
 @implementation SubclassConfigViewController
 
@@ -19,9 +28,16 @@
     [super viewWillAppear:animated];
     if ([PFUser currentUser]) {
         self.welcomeLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Welcome %@!", nil), [[PFUser currentUser] username]];
+    SWRevealViewController * controller = [self.storyboard instantiateViewControllerWithIdentifier:@"revealViewController"];
+        [self presentViewController:controller animated:YES completion:nil];
     } else {
         self.welcomeLabel.text = NSLocalizedString(@"Not logged in", nil);
     }
+    HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:HUD];
+    
+    // Regiser for HUD callbacks so we can remove it from the window at the right time
+    HUD.delegate = self;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -72,6 +88,7 @@
 // Sent to the delegate when the log in screen is dismissed.
 - (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {
     NSLog(@"User dismissed the logInViewController");
+    
 }
 
 
@@ -97,6 +114,11 @@
 
 // Sent to the delegate when a PFUser is signed up.
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
+    [HUD show:YES];
+   
+    [QuestionObject initQuestions];
+
+    [HUD hide:YES];
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 

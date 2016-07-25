@@ -10,4 +10,9 @@
 
 @interface PurchaseViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *menuItem;
+
+@property (weak, nonatomic) IBOutlet UIButton *upgradeBtn;
+@property (weak, nonatomic) IBOutlet UIButton *restoreBtn;
+
 @end

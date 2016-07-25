@@ -7,7 +7,8 @@
 //
 
 #import "DefaultSettingsViewController.h"
-
+#import "StarterViewController.h"
+#import "QuestionObject.h"
 @implementation DefaultSettingsViewController
 
 
@@ -20,6 +21,7 @@
     } else {
         self.welcomeLabel.text = NSLocalizedString(@"Not logged in", nil);
     }
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -29,11 +31,13 @@
         // Create the log in view controller
         PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
         [logInViewController setDelegate:self]; // Set ourselves as the delegate
-        
+        UIImageView * imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Logo.png"]];
+        logInViewController.logInView.logo = imageView;
         // Create the sign up view controller
         PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
         [signUpViewController setDelegate:self]; // Set ourselves as the delegate
-        
+         UIImageView * imageView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Logo.png"]];
+        signUpViewController.signUpView.logo = imageView1;
         // Assign our sign up controller to be displayed from the login controller
         [logInViewController setSignUpController:signUpViewController]; 
         
@@ -60,6 +64,9 @@
 // Sent to the delegate when a PFUser is logged in.
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
     [self dismissViewControllerAnimated:YES completion:NULL];
+    StarterViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"startView"];
+    
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 // Sent to the delegate when the log in attempt fails.
@@ -99,6 +106,11 @@
 // Sent to the delegate when a PFUser is signed up.
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
     [self dismissViewControllerAnimated:YES completion:NULL];
+    [QuestionObject initQuestions];
+    
+    StarterViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"startView"];
+    
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 // Sent to the delegate when the sign up attempt fails.

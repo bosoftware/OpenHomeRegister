@@ -10,4 +10,8 @@
 
 @interface InspectUserTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UILabel *phone;
+@property (weak, nonatomic) IBOutlet UILabel *email;
+
 @end

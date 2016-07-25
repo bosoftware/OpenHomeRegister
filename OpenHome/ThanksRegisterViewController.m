@@ -7,6 +7,7 @@
 //
 
 #import "ThanksRegisterViewController.h"
+#import "AddEditVisitorViewController.h"
 
 @interface ThanksRegisterViewController ()
 
@@ -17,6 +18,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"loginbk.png"]];
+    UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapGesture:)];
+    
+    [self.view addGestureRecognizer:singleTapGestureRecognizer];
+
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,6 +31,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)handleSingleTapGesture:(UITapGestureRecognizer *)tapGestureRecognizer{
+    
+    //AddEditVisitorViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"AddEditVisitorViewController"];
+    
+    //[self.navigationController presentViewController:vc animated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 /*
 #pragma mark - Navigation
 
@@ -33,5 +47,8 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)startNextRegister:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

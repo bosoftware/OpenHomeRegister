@@ -7,7 +7,12 @@
 //
 
 #import <Parse/Parse.h>
+#import "PropertyObject.h"
 
-@interface PropertyInspectTime : PFObject
+@interface PropertyInspectTime : PFObject<PFSubclassing>
++ (NSString *)parseClassName;
 
+@property (nonatomic,retain) NSString *inspectTime;
+@property(nonatomic,retain) PFUser * currentUser;
+@property(nonatomic,retain) PropertyObject * propertyObject;
 @end

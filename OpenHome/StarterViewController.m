@@ -1,6 +1,7 @@
 #import "StarterViewController.h"
+#import <Parse/Parse.h>
 
-@interface StarterViewController () <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
+@interface StarterViewController ()
 
 @end
 
@@ -15,18 +16,5 @@
     }
 }
 
-- (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
-
-{
-    [signUpController dismissViewControllerAnimated:YES completion:nil];
-}
-
-
-
-- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
-
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 @end

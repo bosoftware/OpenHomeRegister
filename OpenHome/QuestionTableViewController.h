@@ -10,4 +10,8 @@
 
 @interface QuestionTableViewController : UITableViewController
 
+@property(nonatomic,retain) NSMutableArray * questionArray;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addButtonItem;
+
 @end

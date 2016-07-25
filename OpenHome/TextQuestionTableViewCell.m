@@ -12,6 +12,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    //self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"loginbk.png"]];
+   
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

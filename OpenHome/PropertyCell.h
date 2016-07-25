@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class App;
-@interface AppCell : UITableViewCell
-- (void)configureCellForAppRecord:(App *)app;
+@class PropertyObject;
+@interface PropertyCell : UITableViewCell
+- (void)configureCellForAppRecord:(PropertyObject *)property;
+
+@property (weak, nonatomic) IBOutlet UIButton *editButton;
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
+
 @end

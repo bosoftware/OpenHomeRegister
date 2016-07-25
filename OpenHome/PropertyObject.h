@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
-@interface PropertyObject : ParseObject
+@interface PropertyObject : PFObject<PFSubclassing>
++ (NSString *)parseClassName;
 
+@property (nonatomic,retain) NSString *address;
+@property(nonatomic,retain)NSString * suburb;
+@property(nonatomic,retain)NSString * state;
+@property(nonatomic,retain) NSString *numberOfVisit;
+@property(nonatomic,retain) NSString *memo;
+@property(nonatomic,retain) PFFile * image;
+@property(nonatomic,retain) PFUser * currentUser;
 @end
