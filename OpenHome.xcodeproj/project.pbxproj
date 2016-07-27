@@ -552,7 +552,6 @@
 				TargetAttributes = {
 					443EF0E81B2444AB004A4777 = {
 						CreatedOnToolsVersion = 6.3;
-						DevelopmentTeam = 69WP9AU6YM;
 					};
 					443EF1041B2444AC004A4777 = {
 						CreatedOnToolsVersion = 6.3;
